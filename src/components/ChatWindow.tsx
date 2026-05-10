@@ -30,12 +30,20 @@ function ChatWindow({ messages, isLoading }: ChatWindowProps) {
           <p>{msg.content}</p> 
         </div> 
       ))} 
-      {isLoading && ( 
-        <div className="message model"> 
-          <strong>{chatbotConfig.botName}:</strong> 
-          <p>Sedang mengetik...</p> 
-        </div> 
-      )} 
+      {isLoading && (
+        <div className="message model typing">
+          <strong>{chatbotConfig.botName}</strong>
+
+          <div className="typing-box">
+            Lagi mikir sebentar
+            <span className="dots">
+              <span>.</span>
+              <span>.</span>
+              <span>.</span>
+            </span>
+          </div>
+        </div>
+      )}
       <div ref={bottomRef} /> 
     </div> 
   ); 
