@@ -27,19 +27,31 @@ body {
   align-items: center;
 }
 
+/* HEADER */
+
 .header h1 {
   margin: 0;
   color: white;
   font-size: 1.8rem;
+  position: relative;
+  padding-left: 4rem;
+  line-height: 1.1;
 }
 
 .header h1::before {
   content: "🌍";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-35%);
   background: linear-gradient(135deg, #2563eb, #38bdf8);
-  padding: 0.6rem;
+  width: 2.8rem;
+  height: 2.8rem;
   border-radius: 50%;
-  margin-right: 0.8rem;
-  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
 }
 
 .header h1::after {
@@ -48,9 +60,11 @@ body {
   color: #86efac;
   font-size: 0.9rem;
   font-weight: 400;
-  margin-left: 3.4rem;
-  margin-top: 0.2rem;
+  margin-top: 0.25rem;
+  line-height: 1.2;
 }
+
+/* BUTTON */
 
 .clear-btn {
   padding: 0.7rem 1.4rem;
@@ -66,6 +80,8 @@ body {
 .clear-btn:hover {
   background: rgba(255, 255, 255, 0.15);
 }
+
+/* CHAT WINDOW */
 
 .chat-window {
   flex: 1;
@@ -117,6 +133,8 @@ body {
   margin: 0.25rem 0 0;
 }
 
+/* INPUT */
+
 .chat-input {
   display: flex;
   gap: 1rem;
@@ -161,7 +179,7 @@ body {
   cursor: not-allowed;
 }
 
-/* Typing Indicator */
+/* TYPING */
 
 .typing-box {
   display: inline-flex;
@@ -206,6 +224,9 @@ body {
     opacity: 0.2;
   }
 }
+
+/* MOBILE */
+
 @media (max-width: 768px) {
   .app {
     width: 95%;
@@ -220,11 +241,17 @@ body {
 
   .header h1 {
     font-size: 1.5rem;
+    padding-left: 3.5rem;
+  }
+
+  .header h1::before {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1rem;
   }
 
   .header h1::after {
     font-size: 0.75rem;
-    margin-left: 3rem;
   }
 
   .chat-window {
